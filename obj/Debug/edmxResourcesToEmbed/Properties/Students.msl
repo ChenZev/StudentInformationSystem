@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudentsModelStoreContainer" CdmEntityContainer="StudentsEntities">
+    <EntitySetMapping Name="Administrator">
+      <EntityTypeMapping TypeName="StudentsModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="Aid" ColumnName="Aid" />
+          <ScalarProperty Name="Aname" ColumnName="Aname" />
+          <ScalarProperty Name="Apassword" ColumnName="Apassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentInfor">
+      <EntityTypeMapping TypeName="StudentsModel.StudentInfor">
+        <MappingFragment StoreEntitySet="StudentInfor">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="Spassword" ColumnName="Spassword" />
+          <ScalarProperty Name="Sname" ColumnName="Sname" />
+          <ScalarProperty Name="Ssex" ColumnName="Ssex" />
+          <ScalarProperty Name="Sage" ColumnName="Sage" />
+          <ScalarProperty Name="Sdepartment" ColumnName="Sdepartment" />
+          <ScalarProperty Name="Smajor" ColumnName="Smajor" />
+          <ScalarProperty Name="Sclass" ColumnName="Sclass" />
+          <ScalarProperty Name="Sgpa" ColumnName="Sgpa" />
+          <ScalarProperty Name="Scampus" ColumnName="Scampus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

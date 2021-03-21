@@ -1,0 +1,75 @@
+﻿@model IEnumerable<StudentInformationSystem.Properties.StudentInfor>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>学生信息管理</title>
+    <link rel="stylesheet" href="~/Content/style.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <section class="container">
+    <p>
+        @Html.ActionLink("添加新的学生信息", "Create")
+    </p>
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <table class="hovertable">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>院系</th>
+            <th>专业</th>
+            <th>班级</th>
+            <th>GPA</th>
+            <th>校区</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">
+                    @Html.DisplayFor(modelItem => item.Sno)
+                </td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Sname)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Ssex)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Sage)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Sdepartment)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Smajor)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Sclass)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Sgpa)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">@Html.DisplayFor(modelItem => item.Scampus)</td>
+                <td onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#DDDDDD';">
+                    @Html.ActionLink("修改", "Edit", new { id = item.Sno }) |
+                    @Html.ActionLink("详细信息", "Details", new { id = item.Sno }) |
+                    @Html.ActionLink("删除", "Delete", new { id = item.Sno })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+    </div>
+    </section>
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 江昕钰-ASP.NET 应用程序-17101128</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

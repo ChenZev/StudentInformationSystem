@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="Int32" Nullable="false" />
+    <Property Name="Aname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apassword" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentInfor">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="Spassword" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ssex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sdepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Smajor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sclass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sgpa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Scampus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="StudentsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+    <EntitySet Name="StudentInfor" EntityType="Self.StudentInfor" />
+  </EntityContainer>
+</Schema>
